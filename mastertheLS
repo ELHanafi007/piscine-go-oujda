@@ -1,2 +1,3 @@
 #!/bin/bash 
-ls -I '.*' -mtpu
+
+ls -I '.*' -mtpu | sed 's/, /,/g' | tr -d '\n'
