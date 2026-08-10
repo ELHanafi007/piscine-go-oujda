@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -I .* -mtpu
+ls -I '.*' -mtpu
