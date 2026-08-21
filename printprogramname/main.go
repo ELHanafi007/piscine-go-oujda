@@ -17,4 +17,5 @@ func main() {
 	for _, r := range arg {
 		z01.PrintRune(r)
 	}
+	z01.PrintRune('\n')
 }
