@@ -19,10 +19,6 @@ func main() {
 		n := 0
 		valid := true
 
-		if len(arg) == 0 {
-			valid = false
-		}
-
 		for _, r := range arg {
 			if r < '0' || r > '9' {
 				valid = false
@@ -36,12 +32,10 @@ func main() {
 			continue
 		}
 
-		r := rune('a' + n - 1)
-
 		if upper {
-			r = rune('A' + n - 1)
+			z01.PrintRune(rune('A' + n - 1))
+		} else {
+			z01.PrintRune(rune('a' + n - 1))
 		}
-
-		z01.PrintRune(r)
 	}
 }
