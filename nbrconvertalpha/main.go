@@ -38,4 +38,6 @@ func main() {
 			z01.PrintRune(rune('a' + n - 1))
 		}
 	}
+
+	z01.PrintRune('\n')
 }
