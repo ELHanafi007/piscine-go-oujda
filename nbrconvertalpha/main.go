@@ -37,11 +37,11 @@ func main() {
 		}
 
 		r := rune('a' + n - 1)
+
 		if upper {
 			r = rune('A' + n - 1)
 		}
 
 		z01.PrintRune(r)
 	}
-	z01.PrintRune('\n')
 }
