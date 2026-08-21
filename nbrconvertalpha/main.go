@@ -19,6 +19,10 @@ func main() {
 		n := 0
 		valid := true
 
+		if arg == "" {
+			valid = false
+		}
+
 		for _, r := range arg {
 			if r < '0' || r > '9' {
 				valid = false
@@ -39,5 +43,7 @@ func main() {
 		}
 	}
 
-	z01.PrintRune('\n')
+	if len(args) > 0 {
+		z01.PrintRune('\n')
+	}
 }
