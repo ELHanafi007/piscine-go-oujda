@@ -5,7 +5,7 @@ func MakeRange(min, max int) []int {
 		return nil
 	}
 	slc := make([]int, max-min)
-	for i := 0; i < len(slc); i++ {
+	for i := 0; i < max-min; i++ {
 		slc[i] = min + i
 	}
 	return slc
