@@ -4,10 +4,10 @@ func ShoppingSummaryCounter(str string) map[string]int {
 	list := make(map[string]int)
 	currW := ""
 
-	for _, s := range str {
-		if isalpha(s) {
-			currW += string(s)
-		} else if s == ' ' {
+	for _, r := range str {
+		if isalpha(r) {
+			currW += string(r)
+		} else if r == ' ' {
 			if currW != "" {
 				list[currW]++
 				currW = ""
@@ -22,10 +22,10 @@ func ShoppingSummaryCounter(str string) map[string]int {
 	return list
 }
 
-func isalpha(s rune) bool {
-	if s >= 'a' && s <= 'z' {
+func isalpha(r rune) bool {
+	if r >= 'a' && r <= 'z' {
 		return true
-	} else if s >= 'A' && s <= 'Z' {
+	} else if r >= 'A' && r <= 'Z' {
 		return true
 	}
 	return false
