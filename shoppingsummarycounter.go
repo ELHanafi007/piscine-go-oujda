@@ -3,16 +3,22 @@ package piscine
 func ShoppingSummaryCounter(str string) map[string]int {
 	list := make(map[string]int)
 	currW := ""
+
 	for _, r := range str {
 		if isalpha(r) {
 			currW += string(r)
 		} else if r == ' ' {
-			list[currW]++
-			currW = ""
-		} else if currW != "" {
-			list[currW]++
+			if currW != "" {
+				list[currW]++
+				currW = ""
+			}
 		}
 	}
+
+	if currW != "" {
+		list[currW]++
+	}
+
 	return list
 }
 
