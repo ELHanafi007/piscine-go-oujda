@@ -10,4 +10,5 @@ const N = 6
 
 func main() {
 	fmt.Println(piscine.DescendAppendRange(10, 5))
-	fmt.Println(piscine.DescendAppendRange(5, 10))}
+	fmt.Println(piscine.DescendAppendRange(5, 10))
+}
