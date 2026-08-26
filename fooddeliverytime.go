@@ -1,19 +1,22 @@
 package piscine
 
 type food struct {
+	name string
 	preptime int
+	
 }
 
 func FoodDeliveryTime(order string) int {
-	orderT := 0
-	if order == "burger" {
-		orderT += 15
+	foods := []food{
+		{"burger", 15},
+		{"chips", 10},
+		{"nuggets", 12},
 	}
-	if order == "chips" {
-		orderT += 10
+	for _, f := range foods{
+		if order == f.name{
+			return f.preptime
+		}
 	}
-	if order == "nuggets" {
-		orderT += 12
-	}
-	return orderT
+	
+	return 404
 }
