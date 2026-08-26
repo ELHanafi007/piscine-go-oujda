@@ -1,9 +1,8 @@
 package piscine
 
 type food struct {
-	name string
+	name     string
 	preptime int
-	
 }
 
 func FoodDeliveryTime(order string) int {
@@ -12,11 +11,11 @@ func FoodDeliveryTime(order string) int {
 		{"chips", 10},
 		{"nuggets", 12},
 	}
-	for _, f := range foods{
-		if order == f.name{
+	for _, f := range foods {
+		if order == f.name {
 			return f.preptime
 		}
 	}
-	
+
 	return 404
 }
