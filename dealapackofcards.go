@@ -1,0 +1,16 @@
+package piscine
+
+import "fmt"
+
+func DealAPackOfCards(deck []int) {
+	for i := 0; i < 4; i++ {
+		fmt.Printf("Player %d: ", i+1)
+		for j := 0; j < 3; j++ {
+			if j > 0 {
+				fmt.Printf(", ")
+			}
+			fmt.Printf("%d", deck[i*3+j])
+		}
+		fmt.Printf("\n")
+	}
+}
