@@ -9,6 +9,5 @@ import (
 const N = 6
 
 func main() {
-	toConcat := []string{"Hello!", " How", " are", " you?"}
-	fmt.Println(piscine.Join(toConcat, ":"))
-}
+	fmt.Println(piscine.DescendAppendRange(10, 5))
+	fmt.Println(piscine.DescendAppendRange(5, 10))}
