@@ -17,25 +17,25 @@ func PrintStr(s string) {
 	}
 }
 
-func OpenDoor(ptrDoor Door) bool {
-	PrintStr("Door Opening...\n")
+func OpenDoor(ptrDoor *Door) bool {
+	PrintStr("Door Opening...")
 	ptrDoor.state = OPEN
 	return true
 }
 
-func CloseDoor(ptrDoorDoor) bool {
-	PrintStr("Door Closing...\n")
+func CloseDoor(ptrDoor *Door) bool {
+	PrintStr("Door Closing...")
 	ptrDoor.state = CLOSE
 	return true
 }
 
-func IsDoorOpen(ptrDoor Door) bool {
-	PrintStr("is the Door opened ?\n")
+func IsDoorOpen(ptrDoor *Door) bool {
+	PrintStr("is the Door opened ?")
 	return ptrDoor.state == OPEN
 }
 
-func IsDoorClose(ptrDoorDoor) bool {
-	PrintStr("is the Door closed ?\n")
+func IsDoorClose(ptrDoor *Door) bool {
+	PrintStr("is the Door closed ?")
 	return ptrDoor.state == CLOSE
 }
 
