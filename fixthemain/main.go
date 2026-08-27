@@ -1,4 +1,4 @@
-package piscine
+package main
 
 import "github.com/01-edu/z01"
 
@@ -11,31 +11,31 @@ const (
 	CLOSE
 )
 
-func OpenDoor(ptrDoor *Door) bool {
-	PrintStr("Door Opening...")
-	ptrDoor.state = OPEN
-	return true
-}
-
 func PrintStr(s string) {
 	for _, r := range s {
 		z01.PrintRune(r)
 	}
 }
 
-func CloseDoor(ptrDoor *Door) bool {
-	PrintStr("Door Closing...")
+func OpenDoor(ptrDoor Door) bool {
+	PrintStr("Door Opening...\n")
+	ptrDoor.state = OPEN
+	return true
+}
+
+func CloseDoor(ptrDoorDoor) bool {
+	PrintStr("Door Closing...\n")
 	ptrDoor.state = CLOSE
 	return true
 }
 
-func IsDoorOpen(Door *Door) bool {
-	PrintStr("is the Door opened ?")
-	return Door.state == OPEN
+func IsDoorOpen(ptrDoor Door) bool {
+	PrintStr("is the Door opened ?\n")
+	return ptrDoor.state == OPEN
 }
 
-func IsDoorClose(ptrDoor *Door) bool {
-	PrintStr("is the Door closed ?")
+func IsDoorClose(ptrDoorDoor) bool {
+	PrintStr("is the Door closed ?\n")
 	return ptrDoor.state == CLOSE
 }
 
