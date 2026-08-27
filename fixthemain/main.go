@@ -11,16 +11,16 @@ const (
 	CLOSE
 )
 
-func PrintStr(s string) {
-	for _, r := range s {
-		z01.PrintRune(r)
-	}
-}
-
 func OpenDoor(ptrDoor *Door) bool {
 	PrintStr("Door Opening...")
 	ptrDoor.state = OPEN
 	return true
+}
+
+func PrintStr(s string) {
+	for _, r := range s {
+		z01.PrintRune(r)
+	}
 }
 
 func CloseDoor(ptrDoor *Door) bool {
@@ -29,9 +29,9 @@ func CloseDoor(ptrDoor *Door) bool {
 	return true
 }
 
-func IsDoorOpen(ptrDoor *Door) bool {
+func IsDoorOpen(Door Door) bool {
 	PrintStr("is the Door opened ?")
-	return ptrDoor.state == OPEN
+	return Door.state == OPEN
 }
 
 func IsDoorClose(ptrDoor *Door) bool {
