@@ -38,8 +38,11 @@ func atoi(s string) (int64, bool) {
 	}
 
 	if sign == -1 {
-		if n > 9223372036854775808 {
+		if n > 9223372036854775807 {
 			return 0, false
+		}
+		if n == 9223372036854775807 {
+			return -n - 1, true
 		}
 		return -n, true
 	}
@@ -50,6 +53,10 @@ func atoi(s string) (int64, bool) {
 func printNbr(n int64) {
 	if n < 0 {
 		os.Stdout.Write([]byte("-"))
+		if n == -9223372036854775807-1 {
+			printNbr(9223372036854775807)
+			return
+		}
 		n = -n
 	}
 
@@ -80,7 +87,7 @@ func main() {
 		if b > 0 && a > 9223372036854775807-b {
 			return
 		}
-		if b < 0 && a < -9223372036854775808-b {
+		if b < 0 && a < -9223372036854775807-1-b {
 			return
 		}
 		printNbr(a + b)
@@ -89,7 +96,7 @@ func main() {
 		if b < 0 && a > 9223372036854775807+b {
 			return
 		}
-		if b > 0 && a < -9223372036854775808+b {
+		if b > 0 && a < -9223372036854775807-1+b {
 			return
 		}
 		printNbr(a - b)
@@ -105,7 +112,7 @@ func main() {
 			os.Stdout.Write([]byte("No division by 0\n"))
 			return
 		}
-		if a == -9223372036854775808 && b == -1 {
+		if a == -9223372036854775807-1 && b == -1 {
 			return
 		}
 		printNbr(a / b)
